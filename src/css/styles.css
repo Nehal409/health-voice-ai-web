@@ -148,6 +148,28 @@ h6 {
     text-decoration: none;
 }
 
+.btn-solid-sm {
+    display: inline-block;
+    padding: 1.625rem 2.75rem 1.625rem 2.75rem;
+    border: 1px solid black; /* Black border */
+    border-radius: 32px;
+    background: transparent; /* Transparent background */
+    color: black; /* Black text */
+    font-weight: 600;
+    font-size: 0.875rem;
+    line-height: 0;
+    text-decoration: none;
+    transition: all 0.2s;
+    margin-right: 0.25rem;
+    margin-bottom: 1.25rem;
+    margin-left: 0.25rem;
+}
+
+.btn-solid-sm:hover {
+    background-color: rgba(0, 0, 0, 0.1); /* Slight black background on hover */
+}
+
+
 
 
 .list .fas {
@@ -510,8 +532,6 @@ input[type="checkbox"] {
 .header {
     background: linear-gradient(rgba(197, 234, 249, 1), rgba(255, 255, 255, 1));
 }
-  
-  
 
 /**********************/
 /*     Conclusion     */
@@ -845,3 +865,49 @@ a:hover.back-to-top {
     width: 100%;
     height: 100%;
   }
+
+  .iframe-container {
+    width: 100%;
+    height: 400px;
+    overflow-y: auto; /* Enable scrolling */
+  }
+  
+  .iframe-container::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  .iframe-container::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+  }
+  
+  .iframe-container::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+  }
+  
+  .iframe-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  .overflow-hidden {
+    overflow: hidden; /* Prevents scrolling */
+    height: 100%; /* Ensures the height is full */
+  }
+  
+  .triangle {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 30px solid #df0909ec; /* You can change the color */
+    margin-bottom: -15px; /* To move it closer to the heading */
+  }
+
+  .triangle-above-heading {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 20px solid #e5e7eb; /* gray-200 color */
+}
+  
+  

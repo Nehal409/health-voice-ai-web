@@ -1,4 +1,5 @@
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 const baseUrl = import.meta.env.VITE_API_BASE_URL;
 
@@ -8,7 +9,6 @@ const ContactForm = () => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [message, setMessage] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -30,15 +30,15 @@ const ContactForm = () => {
       });
 
       if (response.ok) {
-        setMessage(
+        toast.success(
           "Thank you for contacting us! Your message has been successfully sent, and our team will get back to you shortly."
         );
       } else {
         const errorData = await response.json();
-        setMessage(`${errorData.message}`);
+        toast.error(`${errorData.message}`);
       }
     } catch (error) {
-      setMessage(`Error occurred: ${error.message}`);
+      toast.error(`Error occurred: ${error.message}`);
     } finally {
       setIsSubmitting(false);
       setEmail("");
@@ -55,16 +55,7 @@ const ContactForm = () => {
         <div className="card mx-auto max-w-lg p-8 bg-blue-50 border border-gray-200 shadow-md rounded-lg">
           <div className="card-body">
             <h5 className="text-2xl font-bold mb-4 text-center">Contact Us</h5>
-            {/* <p className="mb-8 text-center">
-              Please fill out the form below to book a reservation through
-              Ehsaan Voice AI. Our AI voice agent will contact you shortly to
-              confirm the details.
-            </p> */}
-
-            {message && (
-              <p className="mb-4 text-center text-green-500">{message}</p>
-            )}
-
+            
             <form id="contactForm" onSubmit={handleSubmit}>
               <div className="mb-6">
                 <label
