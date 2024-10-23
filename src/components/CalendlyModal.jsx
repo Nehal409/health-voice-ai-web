@@ -33,7 +33,7 @@ const CalendlyModal = ({ isOpen, onClose }) => {
           className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 mt-12"
           onClick={handleOverlayClick} // Add click event handler
         >
-          <div className="bg-blue-50 border border-gray-200 shadow-md rounded-lg p-8 max-w-md w-full h-[63vh] relative overflow-hidden">
+          <div className="bg-blue-50 border border-gray-200 shadow-md rounded-lg p-8 max-w-md w-full h-[63vh] relative overflow-hidden transform transition-all duration-300 hover:scale-105">
             {/* Close Icon */}
             <button
               onClick={onClose}

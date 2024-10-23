@@ -65,63 +65,63 @@ const ReservationForm = ({ isVoiceOpen, onClose }) => {
 
   return (
     <div>
-      {isVoiceOpen && (
-        <div
-          id="overlay" 
-          className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 mt-12"
-          onClick={handleOverlayClick} 
-        >
-          <div className="bg-blue-50 border border-gray-200 shadow-md rounded-lg p-8 max-w-md w-full h-[50vh] relative overflow-hidden">
-           
-            <button
-              onClick={onClose}
-              className="absolute top-4 right-4 text-gray-700 hover:text-gray-900"
-            >
-              <AiOutlineClose size={14} />
-            </button>
-
-            <h5 className="text-2xl font-bold mb-4 text-center">
-              Book An Appointment
-            </h5>
-
-            <form id="contactForm" onSubmit={handleSubmit}>
-              <div className="mb-6">
-                <label
-                  htmlFor="email"
-                  className="block text-gray-700 text-left mb-2"
-                >
-                  Email
-                </label>
-                <input
-                  type="email"
-                  className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
-                  id="email"
-                  placeholder="Enter your email address"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                />
-              </div>
-
-              <div className="mb-6">
-                <label
-                  htmlFor="phone"
-                  className="block text-gray-700 text-left mb-2"
-                >
-                  Phone
-                </label>
-                <input
-                  type="tel"
-                  className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
-                  id="phone"
-                  placeholder="Enter your phone number"
-                  value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
-                  required
-                />
-              </div>
-
-              <div className="text-center">
+    {isVoiceOpen && (
+      <div
+        id="overlay"
+        className="fixed inset-0 bg-black bg-opacity-60 flex justify-center items-center z-50"
+        onClick={handleOverlayClick}
+      >
+        <div className="bg-gradient-to-br from-white to-blue-50 border border-gray-300 shadow-xl rounded-xl p-8 max-w-md w-full h-[55vh] relative overflow-hidden transform transition-all duration-300 hover:scale-105">
+          
+          <button
+            onClick={onClose}
+            className="absolute top-4 right-4 text-gray-700 hover:text-gray-900 focus:outline-none"
+          >
+            <AiOutlineClose size={14} />
+          </button>
+  
+          <h5 className="text-2xl font-extrabold mb-6 text-center">
+            Book An Appointment
+          </h5>
+  
+          <form id="contactForm" onSubmit={handleSubmit}>
+            <div className="mb-6">
+              <label
+                htmlFor="email"
+                className="block text-gray-700 text-left font-semibold mb-2"
+              >
+                Email
+              </label>
+              <input
+                type="email"
+                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
+                id="email"
+                placeholder="Enter your email address"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </div>
+  
+            <div className="mb-6">
+              <label
+                htmlFor="phone"
+                className="block text-gray-700 text-left font-semibold mb-2"
+              >
+                Phone
+              </label>
+              <input
+                type="tel"
+                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
+                id="phone"
+                placeholder="Enter your phone number"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                required
+              />
+            </div>
+  
+            <div className="text-center">
                 <button
                   type="submit"
                   className="btn-solid-lg"
@@ -130,11 +130,12 @@ const ReservationForm = ({ isVoiceOpen, onClose }) => {
                   {isSubmitting ? "Submitting..." : "Voice AI Demo Call"}
                 </button>
               </div>
-            </form>
-          </div>
+          </form>
         </div>
-      )}
-    </div>
+      </div>
+    )}
+  </div>
+  
   );
 };
 
