@@ -1,8 +1,8 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from "react";
 import ReservationForm from "./ReservationForm";
-import Streamlit2 from "../assets/images/Streamlit2.mp4";
 import CalendlyModal from "./CalendlyModal";
+import HealthAI from "../assets/images/HealthAI.mp4"
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -64,10 +64,10 @@ const Header = () => {
           <div id="reservation" className="w-full">
             <div className="relative pb-[40.25%] mx-10 mt-6 overflow-hidden rounded-lg shadow-lg">
               <iframe
-                className="absolute top-0 left-0 w-full h-full rounded-lg"
-                src={Streamlit2}
+                className="absolute top-0 left-0 w-full h-full"
+                src={HealthAI}
                 frameBorder="0"
-                allow="autoplay; fullscreen"
+                allow="autoplay"
                 allowFullScreen
                 title="Embedded Video"
               ></iframe>
