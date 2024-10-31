@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import ReservationForm from "./ReservationForm";
 import CalendlyModal from "./CalendlyModal";
-import HealthAI from "../assets/images/HealthAI.mp4"
+import HealthAIOne from "../assets/images/HealthAIOne.mp4"
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -65,7 +65,7 @@ const Header = () => {
             <div className="relative pb-[40.25%] mx-10 mt-6 overflow-hidden rounded-lg shadow-lg">
               <iframe
                 className="absolute top-0 left-0 w-full h-full"
-                src={HealthAI}
+                src={HealthAIOne}
                 frameBorder="0"
                 allow="autoplay"
                 allowFullScreen
