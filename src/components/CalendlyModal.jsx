@@ -1,27 +1,22 @@
-import { useEffect } from 'react';
-import { AiOutlineClose } from "react-icons/ai"; // Import close icon from react-icons
+import { useEffect } from "react";
+import { AiOutlineClose } from "react-icons/ai";
 
 // eslint-disable-next-line react/prop-types
 const CalendlyModal = ({ isOpen, onClose }) => {
-  // Function to handle clicks on the overlay to close the modal
   const handleOverlayClick = (e) => {
-    // Close the modal only if the click is on the overlay
     if (e.target.id === "overlay") {
       onClose();
     }
   };
 
   useEffect(() => {
-    // Lock the background scroll when the modal is open
     if (isOpen) {
-      document.body.classList.add('overflow-hidden');
+      document.body.classList.add("overflow-hidden");
     } else {
-      document.body.classList.remove('overflow-hidden');
+      document.body.classList.remove("overflow-hidden");
     }
-    
-    // Clean up on component unmount
     return () => {
-      document.body.classList.remove('overflow-hidden');
+      document.body.classList.remove("overflow-hidden");
     };
   }, [isOpen]);
 
@@ -29,11 +24,11 @@ const CalendlyModal = ({ isOpen, onClose }) => {
     <div>
       {isOpen && (
         <div
-          id="overlay" // Overlay id for click detection
+          id="overlay"
           className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 mt-12"
-          onClick={handleOverlayClick} // Add click event handler
+          onClick={handleOverlayClick}
         >
-          <div className="bg-blue-50 border border-gray-200 shadow-md rounded-lg p-8 max-w-md w-full h-[63vh] relative overflow-hidden transform transition-all duration-300 hover:scale-105">
+          <div className="bg-blue-50 border border-gray-200 shadow-md rounded-lg p-8 w-[800px] h-[600px] relative overflow-hidden transform transition-all duration-300 hover:scale-105">
             {/* Close Icon */}
             <button
               onClick={onClose}
@@ -42,11 +37,13 @@ const CalendlyModal = ({ isOpen, onClose }) => {
               <AiOutlineClose size={14} />
             </button>
 
-            <div className="iframe-container">
+            {/* Child div with no overflow and iframe fully fitted */}
+            <div className="w-full h-full overflow-hidden">
               <iframe
-                width="100%"
-                height="400px"
+                className="w-full h-full"
                 src="https://calendly.com/haroon-ehsaantech"
+                title="Calendly"
+                style={{ border: "none" }} // Removes default iframe border
               />
             </div>
           </div>

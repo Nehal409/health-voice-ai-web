@@ -5,7 +5,7 @@ import wosler from "../assets/images/wosler.png";
 const Clients = () => {
   return (
     <div className="px-4 sm:px-8 lg:px-16 bg-gray-200 relative">
-      <div className="triangle-above-heading absolute left-1/2 transform -translate-x-1/2 -top-5"></div>
+      <div className="triangle-above-heading absolute left-1/2 transform -translate-x-1/2 -top-4"></div>
       <div className="flex flex-col justify-center text-center lg:text-center xl:mr-12">
         <h1 className="text-3xl mt-6 font-bold">TRUSTED BY</h1>
 
