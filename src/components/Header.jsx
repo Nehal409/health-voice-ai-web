@@ -88,9 +88,9 @@ const Header = () => {
           </button>
         </div>
       </div>
-
+      <div>
       <CalendlyModal isOpen={isOpen} onClose={closeModal} />
-
+      </div>
       {isVoiceOpen && (
         <ReservationForm isVoiceOpen={isVoiceOpen} onClose={closeVoiceModal} />
       )}
