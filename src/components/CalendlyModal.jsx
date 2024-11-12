@@ -25,7 +25,7 @@ const CalendlyModal = ({ isOpen, onClose }) => {
       {isOpen && (
         <div
           id="overlay"
-          className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 mt-12"
+          className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 mt-14"
           onClick={handleOverlayClick}
         >
           <div className="bg-blue-50 border border-gray-200 shadow-md rounded-lg p-8 w-[800px] h-[600px] relative overflow-hidden transform transition-all duration-300 hover:scale-105">
