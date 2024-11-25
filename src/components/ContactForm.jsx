@@ -36,7 +36,7 @@ const ContactForm = () => {
         toast.success(
           "Thank you for contacting us! Your message has been successfully sent, and our team will get back to you shortly."
         );
-        logEvent(analytics, "Submit-Contact Form")
+        logEvent(analytics, "Form_Submit")
       } else {
         const errorData = await response.json();
         toast.error(`${errorData.message}`);

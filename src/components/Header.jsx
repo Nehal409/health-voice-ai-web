@@ -11,7 +11,7 @@ const Header = () => {
 
   const openModal = () => {
     setIsOpen(true);
-    logEvent(analytics, "Book-Discovery Call");
+    logEvent(analytics, "Discovery_Call");
   };
   const closeModal = () => setIsOpen(false);
 
