@@ -2,12 +2,17 @@
 import React, { useState } from "react";
 import ReservationForm from "./ReservationForm";
 import CalendlyModal from "./CalendlyModal";
-import VideoWithoutTransition from "../assets/images/VideoWithoutTransition.mp4"
+import VideoWithoutTransition from "../assets/images/VideoWithoutTransition.mp4";
+import { analytics } from "../../firebaseConfig";
+import { logEvent } from "firebase/analytics";
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isVoiceOpen, setIsVoiceOpen] = useState(false);
 
-  const openModal = () => setIsOpen(true);
+  const openModal = () => {
+    setIsOpen(true);
+    logEvent(analytics, "Book-Discovery Call");
+  };
   const closeModal = () => setIsOpen(false);
 
   const openVoiceModal = () => setIsVoiceOpen(true);
@@ -21,8 +26,8 @@ const Header = () => {
             Empower Healthcare with AI-Driven Automation
           </h1>
           <h2 className="font-semibold text-xl sm:text-2xl lg:text-3xl mb-4 text-gray-600">
-            Let AI handle appointment scheduling, follow-ups, and patient
-            calls, so you can focus on exceptional patient care.
+            Let AI handle appointment scheduling, follow-ups, and patient calls,
+            so you can focus on exceptional patient care.
           </h2>
         </div>
       </div>
@@ -89,7 +94,7 @@ const Header = () => {
         </div>
       </div>
       <div>
-      <CalendlyModal isOpen={isOpen} onClose={closeModal} />
+        <CalendlyModal isOpen={isOpen} onClose={closeModal} />
       </div>
       {isVoiceOpen && (
         <ReservationForm isVoiceOpen={isVoiceOpen} onClose={closeVoiceModal} />
