@@ -15,7 +15,10 @@ const Header = () => {
   };
   const closeModal = () => setIsOpen(false);
 
-  const openVoiceModal = () => setIsVoiceOpen(true);
+  const openVoiceModal = () => {
+    setIsVoiceOpen(true);
+    logEvent(analytics, "VoiceAI_Demo");
+  }
   const closeVoiceModal = () => setIsVoiceOpen(false);
 
   return (
