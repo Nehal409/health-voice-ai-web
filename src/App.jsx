@@ -20,7 +20,6 @@ function App() {
     const enterTime = Date.now();
     setStartTime(enterTime);
 
-    console.log("Visitor entered squeeze page at:", new Date(enterTime).toISOString());
 
     return () => {
       const leaveTime = Date.now();
@@ -36,7 +35,7 @@ function App() {
         });
       }
     };
-  }, [startTime]);
+  }, []);
   return (
     <div>
       <Navbar />
