@@ -3,21 +3,21 @@ import React, { useState } from "react";
 import ReservationForm from "./ReservationForm";
 import CalendlyModal from "./CalendlyModal";
 import VideoWithoutTransition from "../assets/images/VideoWithoutTransition.mp4";
-import { analytics } from "../../firebaseConfig";
-import { logEvent } from "firebase/analytics";
+// import { analytics } from "../../firebaseConfig";
+// import { logEvent } from "firebase/analytics";
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isVoiceOpen, setIsVoiceOpen] = useState(false);
 
   const openModal = () => {
     setIsOpen(true);
-    logEvent(analytics, "Discovery_Call");
+    // logEvent(analytics, "Discovery_Call");
   };
   const closeModal = () => setIsOpen(false);
 
   const openVoiceModal = () => {
     setIsVoiceOpen(true);
-    logEvent(analytics, "VoiceAI_Demo");
+    // logEvent(analytics, "VoiceAI_Demo");
   }
   const closeVoiceModal = () => setIsVoiceOpen(false);
 

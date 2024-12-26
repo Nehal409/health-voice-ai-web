@@ -8,34 +8,34 @@ import "./css/styles.css";
 import "./css/swiper.css";
 import Testimonial from "./components/Testimonial";
 import Clients from "./components/Clients";
-import { useEffect } from "react";
-import { logEvent } from "firebase/analytics";
-import { analytics } from "../firebaseConfig";
-import { useState } from "react";
+// import { useEffect } from "react";
+// import { logEvent } from "firebase/analytics";
+// import { analytics } from "../firebaseConfig";
+// import { useState } from "react";
 function App() {
 
-  const [startTime, setStartTime] = useState(null); 
+  // const [startTime, setStartTime] = useState(null); 
 
-  useEffect(() => {
-    const enterTime = Date.now();
-    setStartTime(enterTime);
+  // useEffect(() => {
+  //   const enterTime = Date.now();
+  //   setStartTime(enterTime);
 
 
-    return () => {
-      const leaveTime = Date.now();
-      if (startTime) {
-        const durationInMinutes = (leaveTime - startTime) / 60000; // Time in minutes
-        console.log(`Visitor spent ${durationInMinutes.toFixed(2)} minutes on squeeze page.`);
+  //   return () => {
+  //     const leaveTime = Date.now();
+  //     if (startTime) {
+  //       const durationInMinutes = (leaveTime - startTime) / 60000; // Time in minutes
+  //       console.log(`Visitor spent ${durationInMinutes.toFixed(2)} minutes on squeeze page.`);
 
-        // Log the event to Firebase Analytics
-        logEvent(analytics, 'Duration_SqueezePage', {
-          duration_minutes: durationInMinutes.toFixed(2), // Rounded to 2 decimal places
-          start_time: new Date(startTime).toISOString(),
-          end_time: new Date(leaveTime).toISOString(),
-        });
-      }
-    };
-  }, []);
+  //       // Log the event to Firebase Analytics
+  //       logEvent(analytics, 'Duration_SqueezePage', {
+  //         duration_minutes: durationInMinutes.toFixed(2), // Rounded to 2 decimal places
+  //         start_time: new Date(startTime).toISOString(),
+  //         end_time: new Date(leaveTime).toISOString(),
+  //       });
+  //     }
+  //   };
+  // }, []);
   return (
     <div>
       <Navbar />
